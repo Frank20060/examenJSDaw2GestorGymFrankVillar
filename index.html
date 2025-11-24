@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gestión de Reservas - Gimnasio</title>
+    <link rel="stylesheet" href="estilo.css">
+  <body>
+    <div class="app">
+      <!-- Columna Izquierda -->
+      <div>
+        <button class="btn-toggle" id="toggleBtn">
+          Ocultar Lista de Actividades
+        </button>
+        <aside class="left" id="leftCol">
+          <div>
+            <h2 class="section-title">Lista de actividades</h2>
+            <table
+              class="activities-table"
+              aria-describedby="lista-actividades"
+            >
+              <thead>
+                <tr>
+                  <th>Actividad</th>
+                  <th>Duración</th>
+                  <th>Intensidad</th>
+                  <th>Foto</th>
+                </tr>
+                
+              </thead>
+              <tbody id="activitiesTbody">
+                <!-- Las imagenes no cargan sin red porque las cojo de internet  -->
+              </tbody>
+            </table>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Columna Derecha -->
+      <main class="right">
+        <div class="control-bar" aria-label="Barra control reservas">
+          <select
+            id="selectActivity"
+            aria-label="Seleccionar actividad"
+          ></select>
+          <select id="selectPeople" aria-label="Seleccionar número de personas">
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+          </select>
+          <select id="selectSlot" aria-label="Seleccionar franja horario">
+            <!-- populated por JS -->
+          </select>
+          <button class="btn-register" id="btnRegister">
+            Registrar Reserva
+          </button>
+        </div>
+
+        <section class="slots" id="slotsContainer" aria-label="Franjas horarias">
+          <!-- tarjetas creadas por JS -->
+  
+        </section>
+      </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal-header">
+          <h3 id="modalTitle">Detalles de reservas para las</h3>
+          <div>
+            <button class="close-btn" id="closeModal" title="Cerrar">✕</button>
+          </div>
+        </div>
+        <div id="modalBody">
+
+          <table class="details-table">
+            <thead>
+              <tr>
+                <th>Actividad</th>
+                <th>Personas</th>
+                <th>Duracion (min)</th>
+                <th>Carga total ( duracion * personas)</th>
+              </tr>
+            </thead>
+            <tbody class="contentModal">
+                
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+    </div>
+     <script src="script.js"></script>
+  </body>
+</html>
