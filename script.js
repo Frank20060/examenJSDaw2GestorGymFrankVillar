@@ -101,7 +101,7 @@ function renderActividades(){
       <th>${act.name}</th>
       <th>${act.duration}</th>
       <th>${act.intensity}</th>
-      <th><img src="${act.photo}" alt="Imagen de la actividad ${act.name}"></th>
+      <th><img src="${act.photo} class="pic"" alt="Imagen de la actividad ${act.name}"></th>
     </tr>
     `
   });
